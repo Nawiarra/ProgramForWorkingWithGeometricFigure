@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace GeometricFigureCore
 {
-    public class Triangle : FigureInterface <Triangle>
+    public class Triangle : FigureInterface<Triangle>
     {
         private static int countOfSidesAndAngles = 3;
 
-        private float[] sides = new float [countOfSidesAndAngles];
+        private float[] sides = new float[countOfSidesAndAngles];
         public float[] Sides
         {
             get { return sides; }
@@ -48,9 +48,19 @@ namespace GeometricFigureCore
             }
         }
 
+        public Triangle(float[] angles, float[] sides)
+        {
+            for (int i = 0; i < countOfSidesAndAngles; i++)
+            {
+                Angles[i] = angles[i];
+
+                Sides[i] = sides[i];
+            }
+        }
+
         public bool Equals(Triangle obj)
         {
-            if((Sides[0]== obj.Sides[0])&&(Sides[1] == obj.Sides[1]) && (Sides[2] == obj.Sides[2]))
+            if ((Sides[0] == obj.Sides[0]) && (Sides[1] == obj.Sides[1]) && (Sides[2] == obj.Sides[2]))
             {
                 if ((Angles[0] == obj.Angles[0]) && (Angles[1] == obj.Angles[1]) && (Angles[2] == obj.Angles[2]))
                 {

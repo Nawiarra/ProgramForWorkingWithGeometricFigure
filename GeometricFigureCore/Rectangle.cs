@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GeometricFigureCore
 {
-    public class Rectangle : FigureInterface <Rectangle>
+    public class Rectangle : FigureInterface<Rectangle>
     {
         private float sideA;
         public float SideA
@@ -19,7 +19,15 @@ namespace GeometricFigureCore
         public float SideB
         {
             get { return sideB; }
+
             set { sideB = value > 0 ? value : 1; }
+        }
+
+        public Rectangle(float sideA, float sideB)
+        {
+            SideA = sideA;
+            SideB = sideB;
+
         }
         public bool Equals(Rectangle obj)
         {

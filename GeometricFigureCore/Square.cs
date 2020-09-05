@@ -6,13 +6,23 @@ using System.Threading.Tasks;
 
 namespace GeometricFigureCore
 {
-    public class Square : FigureInterface <Square>
+    public class Square : FigureInterface<Square>
     {
-        public float Side { get; private set; }
+        private float side;
+        public float Side
+        {
+            get { return side; }
+
+            set { side = value > 0 ? value : 1; }
+        }
 
         public bool Equals(Square obj)
         {
             throw new NotImplementedException();
+        }
+        public Square(float side)
+        {
+            Side = side;
         }
 
         public double GetArea()

@@ -21,6 +21,7 @@ namespace GeometricFigureCore
         public float SemiMinorAxis
         {
             get { return semiMinorAxis; }
+
             set { semiMinorAxis = value > 0 ? value : 1; }
         }
 

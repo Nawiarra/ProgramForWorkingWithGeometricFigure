@@ -36,7 +36,7 @@ namespace GeometricFigureCore
             return SemiMajorAxis == obj.SemiMajorAxis ? (SemiMinorAxis == obj.SemiMinorAxis ? true : false) : false;
         }
 
-        public override double GetArea()
+        public virtual double GetArea()
         {
             return Math.PI * SemiMajorAxis * SemiMinorAxis;
         }

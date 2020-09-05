@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GeometricFigureCore
 {
-    class Triangle : FigureInterface <Triangle>
+    public class Triangle : FigureInterface <Triangle>
     {
         private static int countOfSidesAndAngles = 3;
 

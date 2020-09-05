@@ -6,35 +6,26 @@ using System.Threading.Tasks;
 
 namespace GeometricFigureCore
 {
-    public class Circle : FigureInterface<Circle>
+    public class Circle : Ellips
     {
-        public Point CenterCoord { get; private set; }
-
-        private float radius;
-        public float Radius
-        {
-            get { return radius; }
-            set { radius = value > 0 ? value : 1; }
-        }
-
-        public Circle(Point centerCoord, float radius)
+        public virtual void CreateEllips(Point centerCoord, float radius)
         {
             CenterCoord = centerCoord;
-            Radius = radius;
+            SemiMajorAxis = radius;
+            SemiMinorAxis = radius;
         }
         public bool Equals(Circle obj)
         {
-            return Radius == obj.Radius ? true : false;
+            return SemiMajorAxis == obj.SemiMajorAxis ? true : false;
+        }
+        public override double GetArea()
+        {
+            return Math.PI * Math.Pow(SemiMajorAxis, 2);
         }
 
-        public double GetArea()
+        public override string GetInfo()
         {
-            return Math.PI * Math.Pow(Radius, 2);
-        }
-
-        public string GetInfo()
-        {
-            return $"This is circle with radius = {radius}, centre coord ({CenterCoord.X}; {CenterCoord.Y}) and area = {GetArea()} ";
+            return $"This is circle with radius = {SemiMajorAxis}, centre coord ({CenterCoord.X}; {CenterCoord.Y}) and area = {GetArea()} ";
         }
     }
 }

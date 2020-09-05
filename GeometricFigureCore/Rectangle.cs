@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GeometricFigureCore
 {
-    class Rectangle : FigureInterface <Rectangle>
+    public class Rectangle : FigureInterface <Rectangle>
     {
         private float sideA;
         public float SideA
